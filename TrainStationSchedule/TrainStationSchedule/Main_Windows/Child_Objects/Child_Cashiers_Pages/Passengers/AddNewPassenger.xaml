@@ -1,0 +1,45 @@
+﻿<Window x:Class="TrainStationSchedule.Main_Windows.Child_Objects.Child_Cashiers_Pages.Passengers.AddNewPassenger"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrainStationSchedule.Main_Windows.Child_Objects.Child_Cashiers_Pages.Passengers"
+        mc:Ignorable="d"
+        Icon="/TrainStationSchedule;component/src/img/logo/speed-train-logo.jpg"
+        WindowStartupLocation="CenterScreen"
+        Title="Добавить нового пассажира" Width="600" Height="450">
+    <Grid Background="#f8fafd" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.ColumnSpan="2" Content="Добавить пассажира" HorizontalAlignment="Center"
+               FontSize="18" Foreground="#89a3c6" Margin="0,10"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="ФИО:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Grid.Row="1"  Grid.Column="1" x:Name="FullNameBox" Width="200" Height="35" Margin="5"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Паспорт:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+        <xctk:MaskedTextBox Grid.Row="2" Grid.Column="1" x:Name="PassportBox" Width="200" Height="35" Margin="5"
+                            Mask="0000 000000" PromptChar="_"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Телефон:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+        <xctk:MaskedTextBox Grid.Row="3" Grid.Column="1" x:Name="PhoneBox" Width="200" Height="35" Margin="5"
+                            Mask="+7 (000) 000-00-00" PromptChar="_"/>
+
+        <Button Grid.Row="4" Grid.ColumnSpan="2" Content="Добавить клиента"
+                Width="160" Height="35" HorizontalAlignment="Center" Margin="10"
+                Style="{StaticResource UserBtnCustom}" Click="AddPassenger_Click"/>
+    </Grid>
+
+</Window>
